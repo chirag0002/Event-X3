@@ -39,6 +39,10 @@ function Event({ event }) {
   }
 
   const newRSVP = async () => {
+
+    const totalR = event.totalRSVPs;
+    const totalC = event.maxCapacity;
+
     try {
       const rsvpContract = connectContract();
       if (rsvpContract) {
@@ -68,7 +72,7 @@ function Event({ event }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>{event.name} | Web3RSVP</title>
+        <title>{event.name} | Event-x3</title>
         <meta name="description" content={event.name} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -147,9 +151,9 @@ function Event({ event }) {
             )}
             <div className="flex item-center">
               <UsersIcon className="w-6 mr-2" />
-              <span className="truncate">
-                {event.totalRSVPs}/{event.maxCapacity} attending
-              </span>
+                <span className="truncate">
+                 {(event.totalRSVPs === event.maxCapacity) ?  "Event is full" : totalR + "/" + totalC + "attending"}
+                </span>
             </div>
             <div className="flex item-center">
               <TicketIcon className="w-6 mr-2" />
