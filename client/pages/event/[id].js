@@ -152,7 +152,8 @@ function Event({ event }) {
             <div className="flex item-center">
               <UsersIcon className="w-6 mr-2" />
                 <span className="truncate">
-                 {(event.totalRSVPs === event.maxCapacity) ?  "Event is full" : totalR + "/" + totalC + "attending"}
+                 {(event.totalRSVPs === event.maxCapacity) ?  "Event is full" : event.totalRSVPs + "/" + event.maxCapacity + "attending"
+                  }
                 </span>
             </div>
             <div className="flex item-center">
