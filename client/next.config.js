@@ -1,8 +1,6 @@
 module.exports = {
-  ...,
   images: {
-    loader: 'akamai',
-    path: '',
+    domains: ["images.unsplash.com", "ipfs.io"],
   },
-  trailingSlash: true,
-}
+  reactStrictMode: false,
+};
